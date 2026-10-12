@@ -1,0 +1,7 @@
+[build]
+  command = "node scripts/build-netlify.mjs"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "24"
+  SITE_DEPLOY_TARGET = "netlify"

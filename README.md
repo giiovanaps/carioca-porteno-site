@@ -17,6 +17,11 @@ pnpm dev
 
 A prévia local abre em `http://127.0.0.1:5173`. Consulte `HOSPEDAGEM.md` para configurar servidor, banco de dados e autenticação em outra hospedagem.
 
+## Apresentação na Netlify
+O arquivo `netlify.toml` configura o comando `node scripts/build-netlify.mjs` e a pasta de publicação `.next`. Essa compilação usa Next.js nativo, compatível com o adaptador da Netlify; a compilação original em `dist/` é destinada à Cloudflare.
+
+As páginas públicas e animações estão disponíveis na apresentação Netlify. O banco D1 e o login administrativo da hospedagem original não são migrados: `/admin/reservas` fica indisponível, e a API não confirma solicitações que não foram gravadas. Os contatos pelo WhatsApp continuam funcionando. Para usar reservas persistentes na Netlify, é necessário configurar um banco e uma autenticação próprios.
+
 Site reconstruído com base nos layouts desktop e mobile fornecidos em 25/09 e no briefing de 09/10/2026.
 
 ## Conteúdo
