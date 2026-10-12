@@ -1,0 +1,2 @@
+import {ORIGIN,experiences,url} from "../lib/content";
+export default function sitemap(){const paths=["","passeios","contato","sobre-nos","privacidade","perguntas-frequentes",...experiences.map(e=>e.path)];return (["pt","es"] as const).flatMap(lang=>paths.map(path=>({url:ORIGIN+url(lang,path),changeFrequency:"monthly" as const,priority:path===""?1:path==="privacidade"?.2:.8,alternates:{languages:{"pt-BR":ORIGIN+url("pt",path),es:ORIGIN+url("es",path)}}})));}
