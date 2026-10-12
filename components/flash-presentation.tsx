@@ -4,7 +4,7 @@ import {useEffect,useRef} from "react";
 import {Lang,pick} from "../lib/content";
 import {Icon} from "./tour-icons";
 
-const NOTICE_INTERVAL_MS=30_000;
+const NOTICE_SEEN_KEY="flash-presentation-notice-v1";
 const COPYRIGHT_LAW="https://www.planalto.gov.br/ccivil_03/leis/l9610.htm";
 
 export function FlashPresentation({lang}:{lang:Lang}){
@@ -12,13 +12,12 @@ export function FlashPresentation({lang}:{lang:Lang}){
  const t=(pt:string,es:string)=>pick(lang,pt,es);
 
  useEffect(()=>{
-  const showNotice=()=>{
-   const notice=dialog.current;
-   if(notice&&!document.hidden&&!notice.open&&!document.querySelector("dialog[open]"))notice.showModal();
-  };
-  showNotice();
-  const interval=window.setInterval(showNotice,NOTICE_INTERVAL_MS);
-  return()=>window.clearInterval(interval);
+  try{if(window.sessionStorage.getItem(NOTICE_SEEN_KEY))return;}catch{}
+  const notice=dialog.current;
+  if(notice&&!notice.open&&!document.querySelector("dialog[open]")){
+   notice.showModal();
+   try{window.sessionStorage.setItem(NOTICE_SEEN_KEY,"seen");}catch{}
+  }
  },[]);
 
  return <>

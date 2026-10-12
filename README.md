@@ -2,7 +2,7 @@
 
 ## Atualização visual de 12/10/2026
 - Tipografia editorial Fraunces, espaçamento responsivo e superfícies mais limpas em `app/premium.css`.
-- Animações de entrada, parallax discreto no desktop, transições e movimento reduzido em `components/site-motion.tsx` e `app/motion.css`.
+- Transições discretas, conteúdo sempre visível e movimento reduzido em `components/site-motion.tsx` e `app/motion.css`. O aviso da Flash aparece uma vez por aba.
 - Faixa de apresentação com a identidade da Flash Sites em `app/flash-brand.css`.
 - Copy e ordem das seções preservadas; somente a avaliação real de Leonardo g é exibida.
 - Compilação e TypeScript validados; conferência em navegador realizada em desktop e mobile.
