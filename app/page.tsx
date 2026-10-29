@@ -29,10 +29,10 @@ export default function Page() {
                   <span className="dot" /> Roteiros de 5 a 8 dias
                 </p>
                 <h2 className="section-title">
-                  Várias paradas, <em>uma viagem só</em>
+                  Quatro viagens <em>inesquecíveis</em>
                 </h2>
               </div>
-              <p>Cada roteiro junta lugares próximos, com voos e traslados já encaixados. Dá para tirar uma parada, somar outra ou mudar as datas.</p>
+              <p>Acordar entre dunas brancas, flutuar num rio transparente, dormir ouvindo a floresta e ver o sol nascer a 5.000 metros. Você escolhe a viagem, a gente cuida de voos, traslados e hotéis.</p>
             </div>
             <div className="routes-grid">
               {ROUTES.map((r, i) => (
@@ -45,6 +45,11 @@ export default function Page() {
                       <div className="route-info">
                         <h3>{r.name}</h3>
                         <p>{r.path}</p>
+                        <span className="route-price">
+                          <small>a partir de</small>
+                          <strong>R$ {r.price}</strong>
+                          <small>por pessoa</small>
+                        </span>
                         <span className="route-meta">
                           <Icon name="clock" size={14} /> {r.days}
                           <span className="route-go">
@@ -58,6 +63,7 @@ export default function Page() {
                 </div>
               ))}
             </div>
+            <p className="routes-note">Valores fictícios, apenas para demonstração deste projeto.</p>
           </section>
         </div>
 

@@ -68,10 +68,10 @@ export const HERO_SLIDES = [
 ];
 
 export const ROUTES = [
-  { id: "emocoes", name: "Rota das Emoções", path: "Jeri · Delta do Parnaíba · Lençóis", days: "8 dias", photo: "lencois-lagoa", tag: "Nordeste" },
-  { id: "aguas", name: "Águas do Centro-Oeste", path: "Bonito · Pantanal", days: "7 dias", photo: "bonito-flutuacao", tag: "Centro-Oeste" },
-  { id: "selva", name: "Imersão na Selva", path: "Manaus · Rio Negro · Lodge", days: "5 dias", photo: "amazonia-selva", tag: "Norte" },
-  { id: "cusco", name: "Cusco em Altitude", path: "Cusco · Humantay · Vinicunca", days: "7 dias", photo: "peru-vinicunca", tag: "Peru" },
+  { id: "emocoes", name: "Rota das Emoções", path: "Jeri · Delta do Parnaíba · Lençóis", days: "8 dias", photo: "lencois-lagoa", tag: "Nordeste", price: "6.890" },
+  { id: "aguas", name: "Águas do Centro-Oeste", path: "Bonito · Pantanal", days: "7 dias", photo: "bonito-flutuacao", tag: "Centro-Oeste", price: "7.450" },
+  { id: "selva", name: "Imersão na Selva", path: "Manaus · Rio Negro · Lodge", days: "5 dias", photo: "amazonia-selva", tag: "Norte", price: "8.290" },
+  { id: "cusco", name: "Cusco em Altitude", path: "Cusco · Humantay · Vinicunca", days: "7 dias", photo: "peru-vinicunca", tag: "Peru", price: "9.980" },
 ];
 
 export const ORBIT = ["san-andres", "jalapao-cachoeira", "pantanal", "chile-portillo", "salvador", "iguacu", "chapada-diamantina", "peru-humantay", "bonito", "rio-pao-de-acucar", "sancho", "jalapao"];

@@ -237,6 +237,10 @@ em { font-family: var(--font-serif), serif; font-style: italic; font-weight: 400
 .route-info { position: absolute; left: 18px; right: 18px; bottom: 18px; z-index: 2; transform: translateZ(60px); }
 .route-info h3 { font-family: var(--font-display), sans-serif; font-size: 1.45rem; font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; }
 .route-info p { font-size: 13px; color: var(--ink-2); margin-top: 6px; }
+.route-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 6px; margin-top: 14px; }
+.route-price small { font-size: 12px; color: var(--ink-3); }
+.route-price strong { font-family: var(--font-display), sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: -0.03em; color: var(--ink); }
+.routes-note { margin-top: 28px; font-size: 12px; color: var(--ink-3); text-align: right; }
 .route-meta { display: flex; align-items: center; gap: 6px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13px; font-weight: 600; color: var(--teal); }
 .route-go { margin-left: auto; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: rgba(255, 255, 255, 0.1); color: var(--ink); transition: background 0.3s, color 0.3s, transform 0.4s var(--ease); }
 .route-card:hover .route-go { background: var(--teal); color: #032622; transform: rotate(45deg); }
