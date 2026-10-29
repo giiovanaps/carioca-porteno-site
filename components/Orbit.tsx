@@ -75,12 +75,12 @@ export function Orbit() {
           <span className="dot" /> Experiência 3D
         </p>
         <h2 className="section-title big">
-          Gire o continente <em>e escolha</em>
+          Gire a América do Sul <em>e escolha</em>
           <br /> sua próxima paisagem
         </h2>
         <p className="orbit-lead">Do mar de sete cores de San Andrés à neve de Portillo, passando pelos fervedouros do Jalapão. Arraste para girar, role a página para acelerar.</p>
       </div>
-      <div className="orbit-stage" ref={stage} aria-label="Galeria 3D de destinos do Brasil e da América do Sul, arraste para girar">
+      <div className="orbit-stage" ref={stage} aria-label="Galeria 3D de destinos da América do Sul, arraste para girar">
         <div className="orbit-ring" ref={ring} style={{ ["--n" as string]: ORBIT.length }}>
           {ORBIT.map((p, i) => (
             <figure key={p} className="orbit-item" style={{ ["--i" as string]: i }}>
