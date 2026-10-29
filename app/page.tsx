@@ -26,13 +26,13 @@ export default function Page() {
             <div className="routes-head" data-reveal>
               <div>
                 <p className="eyebrow">
-                  <span className="dot" /> Roteiros prontos para ajustar
+                  <span className="dot" /> Roteiros de 5 a 8 dias
                 </p>
                 <h2 className="section-title">
-                  Quatro viagens <em>que funcionam</em>
+                  Várias paradas, <em>uma viagem só</em>
                 </h2>
               </div>
-              <p>Combinações de destinos que fazem sentido no mapa e na logística. Use como ponto de partida e mude o que quiser.</p>
+              <p>Cada roteiro junta lugares próximos, com voos e traslados já encaixados. Dá para tirar uma parada, somar outra ou mudar as datas.</p>
             </div>
             <div className="routes-grid">
               {ROUTES.map((r, i) => (
