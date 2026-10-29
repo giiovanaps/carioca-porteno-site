@@ -6,6 +6,7 @@ const LABEL: Record<string, string> = {
   sancho: "Baía do Sancho",
   "jalapao-cachoeira": "Cachoeira da Velha",
   pantanal: "Arara-azul, Pantanal",
+  "itaimbezinho-canion": "Itaimbezinho",
   "rio-pao-de-acucar": "Pão de Açúcar",
   "lencois-aereo": "Lençóis Maranhenses",
 };
@@ -78,7 +79,7 @@ export function Orbit() {
           Gire o Brasil <em>e escolha</em>
           <br /> por onde começar
         </h2>
-        <p className="orbit-lead">Dez cenários brasileiros em fotos reais. Arraste para girar, role a página para acelerar.</p>
+        <p className="orbit-lead">Doze cenários do Brasil e da América do Sul. Arraste para girar, role a página para acelerar.</p>
       </div>
       <div className="orbit-stage" ref={stage} aria-label="Galeria 3D de destinos, arraste para girar">
         <div className="orbit-ring" ref={ring} style={{ ["--n" as string]: ORBIT.length }}>

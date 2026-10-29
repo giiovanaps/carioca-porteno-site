@@ -8,14 +8,14 @@ const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["nor
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://turismosp.netlify.app"),
-  title: "Rota Brasilis | Viagens autorais pelo Brasil",
+  title: "Rota Brasilis | Viagens pelo Brasil e América do Sul",
   description:
-    "Roteiros sob medida pelo Brasil: Lençóis Maranhenses, Fernando de Noronha, Amazônia, Pantanal, Bonito, Iguaçu e muito mais.",
+    "Roteiros sob medida pelo Brasil e América do Sul: Lençóis Maranhenses, Noronha, Amazônia, Cusco, Portillo, San Andrés e muito mais.",
   icons: { icon: "/favicon.svg" },
   openGraph: {
-    title: "Rota Brasilis | Viagens autorais pelo Brasil",
-    description: "Roteiros sob medida de Noronha aos cânions do Sul.",
-    images: ["/assets/brasil/lencois.webp"],
+    title: "Rota Brasilis | Viagens pelo Brasil e América do Sul",
+    description: "Roteiros sob medida do Caribe colombiano aos Andes.",
+    images: ["/assets/brasil/peru-humantay.webp"],
     locale: "pt_BR",
     type: "website",
   },

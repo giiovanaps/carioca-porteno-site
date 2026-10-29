@@ -12,7 +12,7 @@ export default function Creditos() {
     <main className="credits container">
       <a href="/" className="back">← Voltar ao site</a>
       <h1 className="section-title">Créditos das fotos</h1>
-      <p>Todas as fotos vêm do Wikimedia Commons e foram redimensionadas e convertidas para WebP. Clique em cada uma para ver a página original e a licença completa.</p>
+      <p>Fotos do Wikimedia Commons usadas no site, redimensionadas e convertidas para WebP. Clique em cada uma para ver a página original e a licença completa.</p>
       <ul>
         {list.map(([id, c]) => (
           <li key={id}>

@@ -1,16 +1,4 @@
 {
- "lencois": {
-  "file": "File:Parque Nacional dos Lençois Maranhenses Matheus Hobold Sovernigo (01).jpg",
-  "author": "Matheus Hobold Sovernigo",
-  "license": "CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Parque_Nacional_dos_Len%C3%A7ois_Maranhenses_Matheus_Hobold_Sovernigo_(01).jpg"
- },
- "lencois-aereo": {
-  "file": "File:Parque Nacional dos Lençois Maranhenses Matheus Hobold Sovernigo (02).jpg",
-  "author": "Matheus Hobold Sovernigo",
-  "license": "CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Parque_Nacional_dos_Len%C3%A7ois_Maranhenses_Matheus_Hobold_Sovernigo_(02).jpg"
- },
  "noronha": {
   "file": "File:Vista do Mirante do Forte dos Remédios da praia de Fernando de Noronha.jpg",
   "author": "Brunno Monteiro Lira",
@@ -53,12 +41,6 @@
   "license": "CC BY-SA 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Iguaz%C3%BA_Falls_03.jpg"
  },
- "iguacu-aereo": {
-  "file": "File:Iguazú Falls 01.jpg",
-  "author": "Bernard Gagnon",
-  "license": "CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Iguaz%C3%BA_Falls_01.jpg"
- },
  "pantanal": {
   "file": "File:Hyacinth macaw (Anodorhynchus hyacinthinus) in flight.JPG",
   "author": "Charles J. Sharp",
@@ -70,12 +52,6 @@
   "author": "lubasi",
   "license": "CC BY-SA 2.0",
   "source": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Amazon_Rainforest.jpg"
- },
- "rio": {
-  "file": "File:20170825 Blick auf den Corcovado und den Pão de Açúcar.jpg",
-  "author": "Matthias Bethke",
-  "license": "CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:20170825_Blick_auf_den_Corcovado_und_den_P%C3%A3o_de_A%C3%A7%C3%BAcar.jpg"
  },
  "rio-pao-de-acucar": {
   "file": "File:Sugarloaf Mountain with the cloud on top.jpg",
@@ -100,12 +76,6 @@
   "author": "Ricardo Freitas",
   "license": "CC BY-SA 3.0",
   "source": "https://commons.wikimedia.org/wiki/File:C%C3%A2nion_Itaimbezinho_-_Canyon_Itaimbezinho_-_panoramio_(8).jpg"
- },
- "jericoacoara": {
-  "file": "File:Cavalos nas dunas de Jericoacora (edited).jpg",
-  "author": "Original:  Thiago Gomes Gonçalves\nDerivative work:  Aristeas",
-  "license": "CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Cavalos_nas_dunas_de_Jericoacora_(edited).jpg"
  },
  "sancho": {
   "file": "File:Fernando De Noronha Strand Baia Do Sancho (125363049).jpeg",

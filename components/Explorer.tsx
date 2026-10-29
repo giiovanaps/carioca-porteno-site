@@ -66,7 +66,7 @@ export function Explorer() {
             <span className="dot" /> Destinos
           </p>
           <h2 className="section-title">
-            Brasil de <em>norte a sul</em>
+            Do Caribe <em>aos Andes</em>
           </h2>
           <div className="region-tabs" role="tablist" aria-label="Filtrar por região">
             {[null, ...REGIONS].map((r) => (

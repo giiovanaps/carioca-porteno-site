@@ -3,20 +3,15 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { HERO_SLIDES, img } from "@/lib/data";
 import { Icon } from "./Icon";
 
-const DURATION = 7000;
-
-const PERKS = [
-  { icon: "compass", title: "Roteiro", accent: "sob medida", text: "Nada de pacote pronto. Datas, hotéis e ritmo escolhidos com você." },
-  { icon: "pin", title: "Guias", accent: "locais", text: "Gente que mora no destino e conhece o melhor horário de cada trilha." },
-  { icon: "chat", title: "WhatsApp", accent: "na viagem", text: "Voo atrasou, choveu, mudou o plano: uma mensagem e a gente resolve." },
-];
+const DURATION = 6500;
+const N = HERO_SLIDES.length;
 
 export function Hero() {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const root = useRef<HTMLElement>(null);
 
-  const go = useCallback((i: number) => setIndex((i + HERO_SLIDES.length) % HERO_SLIDES.length), []);
+  const go = useCallback((i: number) => setIndex(((i % N) + N) % N), []);
 
   useEffect(() => {
     if (paused) return;
@@ -53,11 +48,11 @@ export function Hero() {
   const slide = HERO_SLIDES[index];
 
   return (
-    <section id="topo" className="hero" ref={root} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+    <section id="topo" className="hero" ref={root}>
       <div className="hero-stage" aria-hidden="true">
         {HERO_SLIDES.map((s, i) => (
           <div key={s.photo} className={`hero-slide ${i === index ? "is-active" : ""}`}>
-            <img src={img(s.photo)} alt="" fetchPriority={i === 0 ? "high" : "low"} loading={i === 0 ? "eager" : "lazy"} />
+            <img src={img(s.photo)} alt="" fetchPriority={i === 0 ? "high" : "low"} loading={i < 2 ? "eager" : "lazy"} />
           </div>
         ))}
         <div className="hero-shade" />
@@ -77,7 +72,7 @@ export function Hero() {
             ))}
           </h1>
           <p className="hero-lead">
-            Montamos viagens pelo Brasil com hotel, transfer, guia e horários resolvidos. Você chega e só precisa olhar em volta.
+            Montamos viagens pelo Brasil e pela América do Sul com hotel, transfer, guia e horários resolvidos. Você chega e só precisa olhar em volta.
           </p>
           <div className="hero-actions">
             <a className="btn btn-primary" href="#destinos">
@@ -89,40 +84,54 @@ export function Hero() {
           </div>
         </div>
 
-        <ul className="hero-perks">
-          {PERKS.map((p, i) => (
-            <li className="glass perk" key={p.title} style={{ ["--d" as string]: i }}>
-              <span className="perk-icon">
-                <Icon name={p.icon} size={18} />
-              </span>
-              <div>
-                <strong>
-                  {p.title} <em>{p.accent}</em>
-                </strong>
-                <span>{p.text}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <div className="hero-deck" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+          <div className="deck" aria-hidden="true">
+            {HERO_SLIDES.map((s, i) => {
+              // Posição relativa ao cartão ativo: 0 na frente, positivos empilhados atrás, -1 saindo.
+              let pos = (i - index + N) % N;
+              if (pos === N - 1) pos = -1;
+              return (
+                <button
+                  key={s.photo}
+                  tabIndex={-1}
+                  className="deck-card"
+                  data-pos={pos}
+                  style={{ ["--pos" as string]: pos }}
+                  onClick={() => pos > 0 && go(i)}
+                >
+                  <img src={img(s.photo)} alt="" draggable={false} />
+                  <span className="deck-label">
+                    <Icon name="pin" size={14} /> {s.place}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
 
-        <nav className="hero-index" aria-label="Destinos em destaque">
-          {HERO_SLIDES.map((s, i) => (
-            <button key={s.photo} className={i === index ? "is-active" : ""} onClick={() => go(i)} aria-label={`Mostrar ${s.place}`} aria-current={i === index}>
-              <span className="num">{String(i + 1).padStart(2, "0")}</span>
-              <span className="bar">
-                <i style={{ animationDuration: `${DURATION}ms`, animationPlayState: paused ? "paused" : "running" }} />
-              </span>
-              <span className="name">{s.place}</span>
+          <div className="deck-controls">
+            <button className="deck-arrow" onClick={() => go(index - 1)} aria-label="Destino anterior">
+              <Icon name="arrowL" size={18} />
             </button>
-          ))}
-        </nav>
+            <div className="deck-progress">
+              <span className="deck-count">
+                {String(index + 1).padStart(2, "0")} <i>/ {String(N).padStart(2, "0")}</i>
+              </span>
+              <span className="bar">
+                <i key={index} style={{ animationDuration: `${DURATION}ms`, animationPlayState: paused ? "paused" : "running" }} />
+              </span>
+            </div>
+            <button className="deck-arrow" onClick={() => go(index + 1)} aria-label="Próximo destino">
+              <Icon name="arrowR" size={18} />
+            </button>
+          </div>
+        </div>
       </div>
 
       <div className="hero-stats container">
         {[
-          ["5", "regiões", "do Amapá ao Rio Grande do Sul"],
-          ["6", "biomas", "da Caatinga ao Pampa"],
-          ["12", "destinos", "para começar a conversa"],
+          ["4", "países", "Brasil, Chile, Peru e Colômbia"],
+          ["16", "destinos", "do Caribe aos Andes"],
+          ["5", "regiões", "do Brasil, de norte a sul"],
         ].map(([n, label, sub]) => (
           <div className="stat" key={label}>
             <span className="stat-n">{n}</span>

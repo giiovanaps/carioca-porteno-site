@@ -119,7 +119,7 @@ export default function Page() {
         <div className="container footer-grid">
           <div>
             <Logo />
-            <p className="footer-tag">Roteiros sob medida pelas cinco regiões do Brasil.</p>
+            <p className="footer-tag">Roteiros sob medida pelo Brasil, Chile, Peru e Colômbia.</p>
           </div>
           <nav aria-label="Rodapé">
             <a href="#destinos">Destinos</a>
