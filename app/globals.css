@@ -227,7 +227,6 @@ em { font-family: var(--font-serif), serif; font-style: italic; font-weight: 400
 .routes-head { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 48px; }
 .routes-head > p { max-width: 380px; color: var(--ink-2); }
 .routes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; perspective: 1200px; }
-.routes-grid > div:nth-child(even) { margin-top: 48px; }
 .tilt { --rx: 0deg; --ry: 0deg; --gx: 50%; --gy: 50%; transform-style: preserve-3d; transform: rotateX(var(--rx)) rotateY(var(--ry)); transition: transform 0.5s var(--ease); }
 .tilt:hover { transition: transform 0.12s linear; }
 .route-card a { position: relative; display: block; aspect-ratio: 3 / 4.6; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); transform-style: preserve-3d; }
@@ -349,7 +348,6 @@ em { font-family: var(--font-serif), serif; font-style: italic; font-weight: 400
   .type-panel { grid-template-columns: 1fr; }
   .type-grid { grid-template-columns: repeat(3, 1fr); }
   .routes-grid { grid-template-columns: repeat(2, 1fr); }
-  .routes-grid > div:nth-child(even) { margin-top: 0; }
   .steps-grid { grid-template-columns: repeat(2, 1fr); }
   .plan-grid { grid-template-columns: 1fr; }
 }
