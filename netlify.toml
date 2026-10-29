@@ -1,7 +1,7 @@
 [build]
-  command = "node scripts/build-netlify.mjs"
+  command = "npm run build"
   publish = ".next"
 
 [build.environment]
-  NODE_VERSION = "24"
-  SITE_DEPLOY_TARGET = "netlify"
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"

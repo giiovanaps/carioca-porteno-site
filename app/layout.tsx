@@ -1,8 +1,32 @@
-import type {Metadata} from "next";
+import type { Metadata, Viewport } from "next";
+import { Syne, Manrope, Instrument_Serif } from "next/font/google";
 import "./globals.css";
-import "./premium.css";
-import "./motion.css";
-import "./flash-brand.css";
-import {SiteMotion} from "../components/site-motion";
-export const metadata:Metadata={metadataBase:new URL("https://carioca-porteno-tour.giiovanapatriciia.chatgpt.site"),title:{default:"Carioca Porteño Tour | Passeios no Rio de Janeiro",template:"%s | Carioca Porteño Tour"},description:"Passeios, traslados e experiências no Rio de Janeiro com atendimento em português e espanhol.",icons:{icon:"/assets/logo-carioca-porteno.png",apple:"/assets/logo-carioca-porteno.png"},robots:{index:true,follow:true},other:{"theme-color":"#032b46"}};
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="pt-BR"><body>{children}<SiteMotion/></body></html>;}
+
+const display = Syne({ subsets: ["latin"], weight: ["600", "700", "800"], variable: "--font-display" });
+const body = Manrope({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-body" });
+const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-serif" });
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://turismosp.netlify.app"),
+  title: "Rota Brasilis | Viagens autorais pelo Brasil",
+  description:
+    "Roteiros sob medida pelo Brasil: Lençóis Maranhenses, Fernando de Noronha, Amazônia, Pantanal, Bonito, Iguaçu e muito mais.",
+  icons: { icon: "/favicon.svg" },
+  openGraph: {
+    title: "Rota Brasilis | Viagens autorais pelo Brasil",
+    description: "Roteiros sob medida de Noronha aos cânions do Sul.",
+    images: ["/assets/brasil/lencois.webp"],
+    locale: "pt_BR",
+    type: "website",
+  },
+};
+
+export const viewport: Viewport = { themeColor: "#03100e" };
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="pt-BR" className={`${display.variable} ${body.variable} ${serif.variable}`}>
+      <body>{children}</body>
+    </html>
+  );
+}

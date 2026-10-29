@@ -1,1 +1,0 @@
-export default function NotFound(){return <main className="container privacy"><h1>Página não encontrada</h1><p>Escolha uma experiência para continuar sua viagem.</p><a className="button yellow" href="/">Voltar ao início</a></main>;}
