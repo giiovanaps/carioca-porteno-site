@@ -23,24 +23,39 @@ export function Hero() {
   useEffect(() => {
     const el = root.current;
     if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    let mx = 0, my = 0, tx = 0, ty = 0, raf = 0;
+    // O loop só roda enquanto há movimento a interpolar e o hero está visível.
+    let mx = 0, my = 0, tx = 0, ty = 0, sp = -1, raf = 0, visible = true;
+    const loop = () => {
+      raf = 0;
+      if (!visible) return;
+      mx += (tx - mx) * 0.08;
+      my += (ty - my) * 0.08;
+      const nsp = Math.min(1, window.scrollY / window.innerHeight);
+      el.style.setProperty("--mx", mx.toFixed(3));
+      el.style.setProperty("--my", my.toFixed(3));
+      if (nsp !== sp) el.style.setProperty("--sp", (sp = nsp).toFixed(3));
+      if (Math.abs(tx - mx) > 0.001 || Math.abs(ty - my) > 0.001) raf = requestAnimationFrame(loop);
+    };
+    const kick = () => {
+      if (!raf && visible) raf = requestAnimationFrame(loop);
+    };
     const onMove = (e: PointerEvent) => {
+      if (e.pointerType === "touch") return;
       tx = e.clientX / window.innerWidth - 0.5;
       ty = e.clientY / window.innerHeight - 0.5;
+      kick();
     };
-    const loop = () => {
-      mx += (tx - mx) * 0.06;
-      my += (ty - my) * 0.06;
-      const sp = Math.min(1, window.scrollY / window.innerHeight);
-      el.style.setProperty("--mx", mx.toFixed(4));
-      el.style.setProperty("--my", my.toFixed(4));
-      el.style.setProperty("--sp", sp.toFixed(4));
-      raf = requestAnimationFrame(loop);
-    };
+    const io = new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting;
+      kick();
+    });
+    io.observe(el);
     window.addEventListener("pointermove", onMove, { passive: true });
-    raf = requestAnimationFrame(loop);
+    window.addEventListener("scroll", kick, { passive: true });
     return () => {
+      io.disconnect();
       window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("scroll", kick);
       cancelAnimationFrame(raf);
     };
   }, []);
@@ -52,11 +67,14 @@ export function Hero() {
       <div className="hero-stage" aria-hidden="true">
         {HERO_SLIDES.map((s, i) => (
           <div key={s.photo} className={`hero-slide ${i === index ? "is-active" : ""}`}>
-            <img src={img(s.photo)} alt="" fetchPriority={i === 0 ? "high" : "low"} loading={i < 2 ? "eager" : "lazy"} />
+            {/* Desktop: fundo pré-desfocado (leve). Tablet e celular: foto nítida em tela cheia. */}
+            <picture>
+              <source media="(max-width: 1100px)" srcSet={img(s.photo)} />
+              <img src={img(`blur/${s.photo}`)} alt="" fetchPriority={i === 0 ? "high" : "low"} decoding="async" />
+            </picture>
           </div>
         ))}
         <div className="hero-shade" />
-        <div className="hero-grain" />
       </div>
 
       <div className="hero-content container">
@@ -99,7 +117,7 @@ export function Hero() {
                   style={{ ["--pos" as string]: pos }}
                   onClick={() => pos > 0 && go(i)}
                 >
-                  <img src={img(s.photo)} alt="" draggable={false} />
+                  <img src={img(s.photo)} alt="" draggable={false} decoding="async" />
                   <span className="deck-label">
                     <Icon name="pin" size={14} /> {s.place}
                   </span>

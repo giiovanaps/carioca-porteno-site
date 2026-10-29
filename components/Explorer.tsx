@@ -122,7 +122,7 @@ export function Explorer() {
                     }}
                   >
                     <div className="cf-photo">
-                      <img src={img(d.photo)} alt={`${d.name}, ${d.state}`} loading="lazy" draggable={false} />
+                      <img src={img(d.photo)} alt={`${d.name}, ${d.state}`} loading="lazy" decoding="async" draggable={false} />
                       <span className="cf-region">{d.region}</span>
                     </div>
                     <div className="cf-body">
