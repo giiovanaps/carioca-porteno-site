@@ -106,7 +106,7 @@ export function Explorer() {
                 const off = i - active + dx / 320;
                 const abs = Math.abs(off);
                 const style = {
-                  transform: `translateX(${off * 58}%) translateZ(${-abs * 180}px) rotateY(${Math.max(-1, Math.min(1, off)) * -38}deg)`,
+                  transform: `translateX(${off * 70}%) translateZ(${-abs * 200}px) rotateY(${Math.max(-1, Math.min(1, off)) * -38}deg)`,
                   opacity: abs > 3.2 ? 0 : 1 - abs * 0.18,
                   zIndex: 100 - Math.round(abs * 10),
                   transition: drag.current ? "none" : undefined,

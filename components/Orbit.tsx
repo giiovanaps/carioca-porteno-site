@@ -35,7 +35,7 @@ export function Orbit() {
           vel = Math.max(-2, Math.min(2, vel));
         }
         angle += vel;
-        el.style.transform = `translateZ(calc(var(--radius) * -1)) rotateX(-6deg) rotateY(${angle}deg)`;
+        el.style.transform = `translateZ(calc(var(--radius) * -0.9)) rotateX(-5deg) rotateY(${angle}deg)`;
       }
       raf = requestAnimationFrame(loop);
     };
