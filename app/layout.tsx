@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Syne, Manrope, Instrument_Serif } from "next/font/google";
+import { Bricolage_Grotesque, Manrope, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
-const display = Syne({ subsets: ["latin"], weight: ["600", "700", "800"], variable: "--font-display" });
+const display = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-display" });
 const body = Manrope({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-body" });
 const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-serif" });
 
