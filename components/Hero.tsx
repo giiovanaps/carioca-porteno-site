@@ -130,7 +130,7 @@ export function Hero() {
       <div className="hero-stats container">
         {[
           ["4", "países", "Brasil, Chile, Peru e Colômbia"],
-          ["16", "destinos", "do Caribe aos Andes"],
+          ["15", "destinos", "do Caribe aos Andes"],
           ["5", "regiões", "do Brasil, de norte a sul"],
         ].map(([n, label, sub]) => (
           <div className="stat" key={label}>

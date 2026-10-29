@@ -6,7 +6,6 @@ const LABEL: Record<string, string> = {
   sancho: "Baía do Sancho",
   "jalapao-cachoeira": "Cachoeira da Velha",
   pantanal: "Arara-azul, Pantanal",
-  "itaimbezinho-canion": "Itaimbezinho",
   "rio-pao-de-acucar": "Pão de Açúcar",
   "lencois-aereo": "Lençóis Maranhenses",
 };
@@ -69,7 +68,7 @@ export function Orbit() {
   return (
     <section id="orbita" className="orbit">
       <div className="orbit-bg" aria-hidden="true">
-        <img src={img("itaimbezinho-canion")} alt="" loading="lazy" />
+        <img src={img("chapada-diamantina")} alt="" loading="lazy" />
       </div>
       <div className="container orbit-head" data-reveal>
         <p className="eyebrow">

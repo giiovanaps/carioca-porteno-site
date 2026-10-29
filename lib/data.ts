@@ -45,7 +45,7 @@ export const DESTINATIONS: Destination[] = [
   { id: "jericoacoara", name: "Jericoacoara", state: "Ceará", region: "Nordeste", photo: "jeri-lagoa", types: ["praias", "romance", "aventura"], season: "Jul a jan", days: "4 a 5 dias", text: "Rede armada dentro da Lagoa do Paraíso, Pedra Furada na maré baixa e pôr do sol na Duna do Pôr do Sol." },
   { id: "chapada-diamantina", name: "Chapada Diamantina", state: "Bahia", region: "Nordeste", photo: "chapada-diamantina", types: ["natureza", "aventura"], season: "Abr a out", days: "5 a 7 dias", text: "Morros em mesa, poços azuis e trilhas clássicas como o Vale do Pati." },
   { id: "salvador", name: "Salvador", state: "Bahia", region: "Nordeste", photo: "salvador", types: ["cultura", "praias"], season: "Set a mar", days: "3 a 4 dias", text: "Ladeiras do Pelourinho, acarajé no fim da tarde e o sol se pondo atrás do Farol da Barra." },
-  { id: "amazonia", name: "Amazônia", state: "Amazonas", region: "Norte", photo: "amazonia", types: ["natureza", "aventura"], season: "Ano todo", days: "4 a 6 dias", text: "Encontro das Águas, canoa pelos igapós e noites em lodge flutuante no Rio Negro." },
+  { id: "amazonia", name: "Amazônia", state: "Amazonas", region: "Norte", photo: "amazonia-selva", types: ["natureza", "aventura"], season: "Ano todo", days: "4 a 6 dias", text: "Encontro das Águas, canoa pelos igapós e noites em lodge flutuante no Rio Negro." },
   { id: "jalapao", name: "Jalapão", state: "Tocantins", region: "Norte", photo: "jalapao", types: ["aventura", "natureza", "aguas"], season: "Mai a set", days: "5 a 6 dias", text: "Dunas douradas, fervedouros onde não se afunda e cachoeiras no meio do cerrado." },
   { id: "bonito", name: "Bonito", state: "Mato Grosso do Sul", region: "Centro-Oeste", photo: "bonito", types: ["aguas", "natureza"], season: "Ano todo", days: "4 a 5 dias", text: "A Gruta do Lago Azul pela manhã e flutuação no Rio da Prata, com peixes passando a um palmo do rosto." },
   { id: "pantanal", name: "Pantanal", state: "MS e MT", region: "Centro-Oeste", photo: "pantanal", types: ["natureza"], season: "Jul a out", days: "4 a 5 dias", text: "Focagem noturna, araras-azuis no café da manhã e chance real de ver onça-pintada às margens do Rio Cuiabá." },
@@ -55,7 +55,6 @@ export const DESTINATIONS: Destination[] = [
   { id: "chile-portillo", name: "Portillo", state: "Andes, Chile", region: "América do Sul", photo: "chile-portillo", types: ["aventura", "romance", "natureza"], season: "Jun a set", days: "4 a 5 dias", text: "Piscina aquecida de frente para a Laguna del Inca congelada, esqui na cordilheira e cerca de 160 km até Santiago." },
   { id: "san-andres", name: "San Andrés", state: "Caribe, Colômbia", region: "América do Sul", photo: "san-andres", types: ["praias", "aguas", "romance"], season: "Jan a abr", days: "5 a 6 dias", text: "O mar de sete cores, coco loco em Johnny Cay e snorkel no Acuario, com peixes coloridos em água na altura da cintura." },
   { id: "iguacu", name: "Cataratas do Iguaçu", state: "Paraná", region: "Sul", photo: "iguacu", types: ["natureza", "aventura"], season: "Ano todo", days: "3 a 4 dias", text: "Mais de 270 quedas d'água em plena Mata Atlântica, na fronteira com a Argentina." },
-  { id: "itaimbezinho", name: "Cânions do Sul", state: "RS e SC", region: "Sul", photo: "itaimbezinho", types: ["natureza", "aventura", "romance"], season: "Mar a ago", days: "3 a 4 dias", text: "Paredões de 700 metros no Itaimbezinho, trilha do Rio do Boi e noites frias em Cambará do Sul." },
 ];
 
 export const HERO_SLIDES = [
@@ -71,11 +70,11 @@ export const HERO_SLIDES = [
 export const ROUTES = [
   { id: "emocoes", name: "Rota das Emoções", path: "Jeri · Delta do Parnaíba · Lençóis", days: "8 dias", photo: "lencois-lagoa", tag: "Nordeste" },
   { id: "aguas", name: "Águas do Centro-Oeste", path: "Bonito · Pantanal", days: "7 dias", photo: "bonito-flutuacao", tag: "Centro-Oeste" },
-  { id: "selva", name: "Imersão na Selva", path: "Manaus · Rio Negro · Lodge", days: "5 dias", photo: "amazonia", tag: "Norte" },
+  { id: "selva", name: "Imersão na Selva", path: "Manaus · Rio Negro · Lodge", days: "5 dias", photo: "amazonia-selva", tag: "Norte" },
   { id: "cusco", name: "Cusco em Altitude", path: "Cusco · Humantay · Vinicunca", days: "7 dias", photo: "peru-vinicunca", tag: "Peru" },
 ];
 
-export const ORBIT = ["san-andres", "jalapao-cachoeira", "pantanal", "chile-portillo", "salvador", "iguacu", "chapada-diamantina", "peru-humantay", "bonito", "rio-pao-de-acucar", "sancho", "itaimbezinho-canion"];
+export const ORBIT = ["san-andres", "jalapao-cachoeira", "pantanal", "chile-portillo", "salvador", "iguacu", "chapada-diamantina", "peru-humantay", "bonito", "rio-pao-de-acucar", "sancho", "jalapao"];
 
 export const STEPS = [
   { n: "01", title: "Conversa", text: "Uma chamada de 20 minutos: datas, orçamento, quem vai e o que ninguém pode perder." },
